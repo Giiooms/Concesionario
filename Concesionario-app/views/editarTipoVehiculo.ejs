@@ -1,0 +1,22 @@
+<!-- editarTipoVehiculo.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Tipo de Vehículo</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Editar Tipo de Vehículo</h1>
+
+  <form action="/tipo_vehiculo/editar/<%= tipo.id_tipo %>" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="<%= tipo.nombre %>" required>
+
+    <button type="submit">Actualizar</button>
+  </form>
+
+  <a href="/tipo_vehiculo">Volver a Tipos de Vehículos</a>
+</body>
+</html>

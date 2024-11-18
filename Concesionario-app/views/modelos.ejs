@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelos de Vehículos</title>
+  <!-- Enlace a Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    h1 {
+      margin-top: 20px;
+    }
+    .btn-nuevo {
+      margin-bottom: 20px;
+    }
+    .table-actions a {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <h1 class="text-center">Gestión de Modelos de Vehículos</h1>
+    <div class="text-end">
+      <a href="/modelos/nuevo" class="btn btn-primary btn-nuevo">Nuevo Modelo</a>
+    </div>
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% modelos.forEach(modelo => { %>
+          <tr>
+            <td><%= modelo.id_modelo %></td>
+            <td><%= modelo.nombre %></td>
+            <td class="table-actions">
+              <a href="/modelos/editar/<%= modelo.id_modelo %>" class="btn btn-warning btn-sm">Editar</a>
+              <a href="/modelos/eliminar/<%= modelo.id_modelo %>" class="btn btn-danger btn-sm">Eliminar</a>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+  <!-- Enlace a Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- archivo: editarDueño.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Dueño</title>
+</head>
+<body>
+  <h1>Editar Dueño</h1>
+  <form action="/anteriores_duenos/editar/<%= dueño.id_dueno %>" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="<%= dueño.nombre %>" required><br>
+
+    <label for="documento_identidad">Documento de Identidad:</label>
+    <input type="text" name="documento_identidad" id="documento_identidad" value="<%= dueño.documento_identidad %>" required><br>
+
+    <label for="telefono">Teléfono:</label>
+    <input type="text" name="telefono" id="telefono" value="<%= dueño.telefono %>"><br>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" name="email" id="email" value="<%= dueño.email %>"><br>
+
+    <label for="fecha_adquisicion">Fecha de Adquisición:</label>
+    <input type="date" name="fecha_adquisicion" id="fecha_adquisicion" value="<%= dueño.fecha_adquisicion %>"><br>
+
+    <button type="submit">Actualizar</button>
+  </form>
+</body>
+</html>
